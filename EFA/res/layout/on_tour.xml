@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnDayTrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tagestour starten" />
+
+    <Button
+        android:id="@+id/btnGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gruppe erstellen" />
+
+    <Button
+        android:id="@+id/btnPerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Person erstellen" />
+
+    <Button
+        android:id="@+id/btnBoat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Boot erstellen" />
+
+    <Button
+        android:id="@+id/btnRoute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Strecke erstellen" />
+
+</LinearLayout>
