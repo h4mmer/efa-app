@@ -1,16 +1,20 @@
-- Ontour
-  - neue gruppe
-  - personen
-  - boote
-  - neue fahrt
-
-- home
-  - ändern
-  - upload
+- Home{}
+  - Ontour
+    - Tages tour starten{DayTrip}(Verknüpfung aus personen und booten und Strecke)
+    - neue gruppe{Group}(Verknüpfung aus Personen und Booten)
+    - personen{Person} ()
+    - boote{Boat}
+    - neue Strecke{Route}
+  - Mittwochspaddeln
+  - online{Online}
+    - ändern
+    - upload
 
 
 Klassen
 
-person
-boot
-strecke
+Gruppe [ Liste aus personen und Booten] 
+Person[Vorname, Nachname, Eigenes Boot]
+Boot [Name, Typ, Besitzer]
+Strecke[ Gewässer, Start, Mitte, Ziel, Kilometer]
+Tour [ Person, Boot, Strecke, Datum, Startzeit, Anfunftszeit]
