@@ -36,7 +36,7 @@ public class PersonActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.person);
         final Spinner spinner = (Spinner) findViewById(R.id.sBoatName);
-        offline offline = new offline(PersonActivity.this);
+        Offline offline = new Offline(PersonActivity.this);
         String[] boats = offline.getBoats();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,   android.R.layout.simple_spinner_item, boats);
 
@@ -75,7 +75,7 @@ public class PersonActivity extends Activity {
 				
 
 
-					offline offline = new offline(PersonActivity.this);
+					Offline offline = new Offline(PersonActivity.this);
 					if(offline.newPerson(firstname, lastname, boatName[0])) {
 						AlertDialog.Builder alert=new AlertDialog.Builder(PersonActivity.this);
 						alert.setTitle("OKAY").setMessage("Speichern Erfolgreich").setNeutralButton("OK", null).show();
