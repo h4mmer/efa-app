@@ -10,8 +10,12 @@ import com.example.efa.PersonActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 
-public class offline extends Activity {
+public class offline {
 
+	public Activity activity;
+	public offline (Activity activity){
+		this.activity = activity;
+	}
 	/**
 	 * 
 	 * @param firstName
@@ -20,7 +24,7 @@ public class offline extends Activity {
 	 * @return Bei erfolgreichem Speichern wird true zurückgegeben.
 	 */
 	public boolean newPerson(String firstName, String lastName, String boatName) {
-		LogMe l = new LogMe(new File(getFilesDir() + "persons.txt"));
+		LogMe l = new LogMe(new File(activity.getFilesDir() + "persons.txt"));
 		try {
 			l.schreiben("" + firstName + "%" + lastName + "%" + boatName + "");
 			return true;
@@ -30,7 +34,7 @@ public class offline extends Activity {
 	}
 
 	public boolean newBoat(String boatName, String boatType) {
-		LogMe l = new LogMe(new File(getFilesDir() + "boats.txt"));
+		LogMe l = new LogMe(new File(activity.getFilesDir() + "boats.txt"));
 		try {
 			l.schreiben("" + boatName + "%" + boatType + "");
 			return true;
@@ -40,7 +44,7 @@ public class offline extends Activity {
 	}
 
 	public String[] getBoats() {
-		LogMe l = new LogMe(new File(getFilesDir() + "boats.txt"));
+		LogMe l = new LogMe(new File(activity.getFilesDir() + "boats.txt"));
 		LinkedList<String> list = null;
 		try {
 			list = l.getList();
