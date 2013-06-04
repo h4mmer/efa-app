@@ -15,22 +15,6 @@ import java.net.URLEncoder;
 public class Curl {
 	private LogMe log;
 
-	public Curl(int i) {
-		File file = new File("fbuserids.txt");
-		this.log = new LogMe(file);
-		if (!file.exists()) {
-			System.out.println("created new File");
-		}
-		logids(i);
-	}
-
-	public Curl() {
-		File file = new File("fbuserids.txt");
-		this.log = new LogMe(file);
-		if (!file.exists())
-			System.out.println("created new File");
-	}
-
 	private String log_valid_ids(String s) throws UnsupportedEncodingException,
 			IOException {
 		BufferedReader reader = get_url("https://graph.facebook.com/" + s
@@ -45,8 +29,6 @@ public class Curl {
 				s = null;
 			}
 		}
-
-		this.log.schreiben(s);
 		return s;
 	}
 
@@ -113,7 +95,7 @@ public class Curl {
 		}
 	}
 
-	public int vote(String fbuserid, int projectid) throws IOException {
+	public boolean post(String fbuserid, int projectid) throws IOException {
 		int back = 0;
 		String body = "fbuserid="
 				+ URLEncoder.encode(String.valueOf(fbuserid), "UTF-8") + "&"
@@ -151,19 +133,58 @@ public class Curl {
 
 		writer.close();
 		reader.close();
-		return back;
-	}
-
-	public void logreset() {
-		this.log.rest();
-	}
-
-	public boolean is_id_valid(String id) {
-		try {
-			log_valid_ids(id);
-			return true;
-		} catch (IOException e) {
-		}
 		return false;
+	}
+
+	/**
+	 * 
+	 * @param mail
+	 * @param boatName
+	 * @param boatTyp
+	 * @param crew
+	 * @param date
+	 *            Im Format 0001-01-01
+	 * @param startTime
+	 *            Im Format 11%3A11
+	 * @param arivalTime
+	 *            Im Format 11%3A11
+	 * @param route
+	 * @param Distance
+	 * @param tourType
+	 * @param Comment
+	 */
+	public void post(String mail, String boatName, String boatTyp,
+			String crew[][], String date, String startTime, String arivalTime,
+			String route, int distance, String tourType, String comment) {
+		if(crew.length!=26)return;
+		String post = ("date=" + 1370255898 + "&mail=" + mail + "&dfBoot="
+				+ boatName + "&cmbBootTyp=" + boatTyp + "&dfSteuermann="
+				+ crew[0][1] + ", " + crew[0][0] + "&dfName1=" + crew[1][1]
+				+ ", " + crew[1][0] + "&dfName2=" + crew[2][1] + ", "
+				+ crew[2][0] + "&dfName3=" + crew[3][1] + ", " + crew[3][0]
+				+ "&dfName4=" + crew[4][1] + ", " + crew[4][0] + "&dfName5="
+				+ crew[5][1] + ", " + crew[5][0] + "&dfName6=" + crew[6][1]
+				+ ", " + crew[6][0] + "&dfName7=" + crew[7][1] + ", "
+				+ crew[7][0] + "&dfName8=" + crew[8][1] + ", " + crew[8][0]
+				+ "&dfName9=" + crew[9][1] + ", " + crew[9][0] + "&dfName10="
+				+ crew[10][1] + ", " + crew[10][0] + "&dfName11=" + crew[11][1]
+				+ ", " + crew[11][0] + "&dfName12=" + crew[12][1] + ", "
+				+ crew[12][0] + "&dfName13=" + crew[13][1] + ", " + crew[13][0]
+				+ "&dfName14=" + crew[14][1] + ", " + crew[14][0]
+				+ "&dfName15=" + crew[15][1] + ", " + crew[15][0]
+				+ "&dfName16=" + crew[16][1] + ", " + crew[16][0]
+				+ "&dfName17=" + crew[17][1] + ", " + crew[17][0]
+				+ "&dfName18=" + crew[18][1] + ", " + crew[18][0]
+				+ "&dfName19=" + crew[19][1] + ", " + crew[19][0]
+				+ "&dfName20=" + crew[20][1] + ", " + crew[20][0]
+				+ "&dfName21=" + crew[21][1] + ", " + crew[21][0]
+				+ "&dfName22=" + crew[22][1] + ", " + crew[22][0]
+				+ "&dfName23=" + crew[23][1] + ", " + crew[23][0]
+				+ "&dfName24=" + crew[24][1] + ", " + crew[24][0]
+				+ "&cmbTrommler=" + crew[25][1] + ", " + crew[25][0]
+				+ "&dfDatum=" + date + "&dfStartZeit=" + startTime
+				+ "&dfEndeZeit=" + arivalTime + "&dfStrecke=" + route
+				+ "&dfkm=" + distance + "&cmbFahrtart=" + tourType
+				+ "&dfBemerkung=" + comment);
 	}
 }
