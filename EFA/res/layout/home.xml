@@ -7,13 +7,25 @@
     <Button
         android:id="@+id/btnOnTour"
         android:layout_width="match_parent"
-        android:layout_height="213dp"
+        android:layout_height="wrap_content"
         android:text="On Tour" />
 
     <Button
         android:id="@+id/btnOnline"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="Online" />
+
+    <Button
+        android:id="@+id/btnHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hilfe" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Über" />
 
 </LinearLayout>

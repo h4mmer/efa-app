@@ -12,5 +12,6 @@
         <item>Drachenboot</item>
         
     </string-array>
+    <string name="programmers">Kai Riedel und Lennard Hammer</string>
 
 </resources>
