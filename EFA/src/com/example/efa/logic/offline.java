@@ -3,6 +3,7 @@ package com.example.efa.logic;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 import com.example.efa.PersonActivity;
@@ -121,6 +122,7 @@ public class offline {
 			int second = s.indexOf("%", first+1);
 			array[list.indexOf(s)]= s.substring(first+1, second)+ ", "+s.substring(0, first);
 		}
+		Arrays.sort(array);
 		return array;
 
 	}
@@ -142,6 +144,7 @@ public class offline {
 		for (String s : list) {
 			array[list.indexOf(s)] =s.substring(0, s.indexOf("%"))+" ("+s.substring(s.indexOf("%")+1, s.length())+")";
 		}
+		Arrays.sort(array);
 		return array;
 
 	}
@@ -164,6 +167,7 @@ public class offline {
 		for (int i = 0; i < list.size(); i++) {
 			array[i] = list.get(i);
 		}
+		Arrays.sort(array);
 		return array;
 
 	}
@@ -185,6 +189,7 @@ public class offline {
 		for (int i = 0; i < list.size(); i++) {
 			array[i] = list.get(i);
 		}
+		Arrays.sort(array);
 		return array;
 
 	}
