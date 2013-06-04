@@ -33,12 +33,11 @@ public class PersonActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.person);
 
-		Button btnSubmit = (Button) findViewById(R.id.btnSubmit);
+		Button btnSubmit = (Button) findViewById(R.id.btnBoatSubmit);
 		btnSubmit.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
-				
 
 				EditText etFirstName = (EditText) findViewById(R.id.etFirstName);
 				String firstname = etFirstName.getText().toString();
@@ -47,23 +46,26 @@ public class PersonActivity extends Activity {
 				EditText etBoatName = (EditText) findViewById(R.id.etBoatName);
 				String boatname = etBoatName.getText().toString();
 				if (firstname.length() == 0 || lastname.length() == 0) { // ALARM
-					AlertDialog.Builder alert=new AlertDialog.Builder(PersonActivity.this);
-					alert.setTitle("Alert!").setMessage("We are under attack!").setNeutralButton("OK", null).show();
-				
+					AlertDialog.Builder alert = new AlertDialog.Builder(
+							PersonActivity.this);
+					alert.setTitle("Alert!").setMessage("We are under attack!")
+							.setNeutralButton("OK", null).show();
+
 				} else {
-					
-				
-
-
 					offline offline = new offline();
-					if(offline.newPerson(firstname, lastname, boatname)) {
-						AlertDialog.Builder alert=new AlertDialog.Builder(PersonActivity.this);
-						alert.setTitle("OKAY").setMessage("Speichern Erfolgreich").setNeutralButton("OK", null).show();
+					if (offline.newPerson(firstname, lastname, boatname)) {
+						AlertDialog.Builder alert = new AlertDialog.Builder(
+								PersonActivity.this);
+						alert.setTitle("OKAY")
+								.setMessage("Speichern Erfolgreich")
+								.setNeutralButton("OK", null).show();
 
-					} else { 
-						AlertDialog.Builder alert=new AlertDialog.Builder(PersonActivity.this);
-						alert.setTitle("Alarm!").setMessage("File ERROR").setNeutralButton("OK", null).show();
-						
+					} else {
+						AlertDialog.Builder alert = new AlertDialog.Builder(
+								PersonActivity.this);
+						alert.setTitle("Alarm!").setMessage("File ERROR")
+								.setNeutralButton("OK", null).show();
+
 					}
 				}
 				;
