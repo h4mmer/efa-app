@@ -103,7 +103,7 @@ public class offline {
 	}
 	/**
 	 * 
-	 * @return
+	 * @return String Array Nachname, Vorname
 	 */
 	public String[] getPersons() {
 		LogMe l = new LogMe(new File(activity.getFilesDir() + "persons.txt"));
@@ -116,15 +116,17 @@ public class offline {
 			return a;
 		}
 		String[] array = new String[list.size()];
-		for (int i = 0; i < list.size(); i++) {
-			array[i] = list.get(i);
+		for (String s: list) {
+			int first = s.indexOf("%");
+			int second = s.indexOf("%", first+1);
+			array[list.indexOf(s)]= s.substring(first+1, second)+ ", "+s.substring(0, first);
 		}
 		return array;
 
 	}
 	/**
 	 * 
-	 * @return
+	 * @return String Array aus Bootsname (Botstyp)
 	 */
 	public String[] getBoats() {
 		LogMe l = new LogMe(new File(activity.getFilesDir() + "boats.txt"));
@@ -137,8 +139,8 @@ public class offline {
 			return a;
 		}
 		String[] array = new String[list.size()];
-		for (int i = 0; i < list.size(); i++) {
-			array[i] = list.get(i);
+		for (String s : list) {
+			array[list.indexOf(s)] =s.substring(0, s.indexOf("%"))+" ("+s.substring(s.indexOf("%")+1, s.length())+")";
 		}
 		return array;
 
