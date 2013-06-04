@@ -51,17 +51,17 @@ public class offline {
 
 	/**
 	 * 
-	 * @param water
+	 * @param waters
 	 * @param start
 	 * @param mid
 	 * @param destination
-	 * @param km
+	 * @param distance
 	 * @return true wenn es erfoglreich war
 	 */
-	public boolean newRoute(String water, String start, String mid, String destination, int km) {
+	public boolean newRoute(String waters, String start, String mid, String destination, int distance) {
 		LogMe l = new LogMe(new File(activity.getFilesDir() + "routes.txt"));
 		try {
-			l.schreiben("" + water + ":" + start + "-"+mid+"-"+destination+":"+km+"km");
+			l.schreiben("" + waters + ":" + start + "-"+mid+"-"+destination+":"+distance+"km");
 			return true;
 		} catch (IOException e) {
 			return false;
