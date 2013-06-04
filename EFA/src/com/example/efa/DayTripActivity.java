@@ -28,17 +28,7 @@ public class DayTripActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.day_trip);
-        LogMe l = new LogMe(new File(getFilesDir()+"file.bla"));
-		try {
-			
-			AlertDialog.Builder alert=new AlertDialog.Builder(DayTripActivity.this);
-			alert.setTitle("Alert!").setMessage(l.getLastline()).setNeutralButton("OK", null).show();
-
-		} catch (IOException e) { 
-			AlertDialog.Builder alert=new AlertDialog.Builder(DayTripActivity.this);
-			alert.setTitle("Alert!").setMessage(e.getMessage()).setNeutralButton("OK", null).show();
-			e.printStackTrace();
-		}
+        
         
     }
 }
