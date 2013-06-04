@@ -50,7 +50,8 @@ public class offline {
 			list = l.getList();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			return null;
+			String[] a = {"Keine","boote"};
+			return a;
 		}
 		String[] array = new String[list.size()];
 		for (int i = 0; i < list.size(); i++) {
