@@ -86,6 +86,25 @@ public class offline {
 			return false;
 		}
 	}
+	/**
+	 * 
+	 * @param date Jahr-Monat-Tag
+	 * @param startTime Stunde:Minute
+	 * @param arivalTime Stunde:Minute
+	 * @param route "" + waters + ":" + start + "-"+mid+"-"+destination+":"+distance+"km"
+	 * @param tourType String
+	 * @param comment String
+	 * @param person Vorname%Nachname%rest
+	 * @param boat Boot%Typ
+	 * @return
+	 */
+	public boolean newDayTrip(String date, String startTime, String arivalTime, String route, String tourType, String comment, String person, String boat){
+		return false;
+	}
+	/**
+	 * 
+	 * @return
+	 */
 	public String[] getPersons() {
 		LogMe l = new LogMe(new File(activity.getFilesDir() + "persons.txt"));
 		LinkedList<String> list = null;
