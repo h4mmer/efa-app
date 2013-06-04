@@ -27,11 +27,7 @@ public class BoatActivity extends Activity {
         setContentView(R.layout.boat);
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner1);
-        //TODO: :) FreudenSprünge
-        String[] boats = {"YEA", "IT", "Works"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,   android.R.layout.simple_spinner_item, boats);
-
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(BoatActivity.this, R.array.BoatTyps, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(BoatActivity.this, R.array.BoatTyps, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         
