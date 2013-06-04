@@ -48,6 +48,28 @@ public class HomeActivity extends Activity {
 				startActivity(in);
 			}
 		});
+		Button btnHelp = (Button) findViewById(R.id.btnHelp);
+		btnHelp.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent in = new Intent(HomeActivity.this,
+						HelpActivity.class);
+				startActivity(in);
+			}
+		});
+		Button btnAbout = (Button) findViewById(R.id.btnAbout);
+		btnAbout.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent in = new Intent(HomeActivity.this,
+						AboutActivity.class);
+				startActivity(in);
+			}
+		});
 	}
 
 }
