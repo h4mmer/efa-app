@@ -55,17 +55,15 @@ public class PersonActivity extends Activity {
 				
 
 
-					LogMe l = new LogMe(new File(getFilesDir()+"file.bla"));
-					try {
-						l.schreiben("" + firstname + "%" + lastname + "%"
-								+ boatname + "");
+					offline offline = new offline();
+					if(offline.newPerson(firstname, lastname, boatname)) {
 						AlertDialog.Builder alert=new AlertDialog.Builder(PersonActivity.this);
-						alert.setTitle("Alert!").setMessage("Speichern Erfolgreich").setNeutralButton("OK", null).show();
+						alert.setTitle("OKAY").setMessage("Speichern Erfolgreich").setNeutralButton("OK", null).show();
 
-					} catch (IOException e) { 
+					} else { 
 						AlertDialog.Builder alert=new AlertDialog.Builder(PersonActivity.this);
-						alert.setTitle("Alert!").setMessage(e.getMessage()).setNeutralButton("OK", null).show();
-						e.printStackTrace();
+						alert.setTitle("Alarm!").setMessage("File ERROR").setNeutralButton("OK", null).show();
+						
 					}
 				}
 				;
