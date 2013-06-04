@@ -1,6 +1,6 @@
 package com.example.efa;
 
-import com.example.efa.logic.Offline;
+import com.example.efa.logic.offline;
 import com.example.efa.util.SystemUiHider;
 
 import android.annotation.TargetApi;
@@ -59,7 +59,7 @@ public class BoatActivity extends Activity {
 					alert.setTitle("Alert!").setMessage("Bitte Botsname eingeben!")
 							.setNeutralButton("OK", null).show();
 				} else {
-					Offline offline = new Offline(BoatActivity.this);
+					offline offline = new offline(BoatActivity.this);
 					if (offline.newBoat(boatname,boattype[0])) {
 						AlertDialog.Builder alert = new AlertDialog.Builder(
 								BoatActivity.this);
