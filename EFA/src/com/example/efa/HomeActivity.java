@@ -44,7 +44,7 @@ public class HomeActivity extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				Intent in = new Intent(HomeActivity.this,
-						OnTourActivity.class);
+						OnlineActivity.class);
 				startActivity(in);
 			}
 		});

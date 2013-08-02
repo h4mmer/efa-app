@@ -1,1 +1,31 @@
-date=1370255898&mail=&dfBoot=test&cmbBootTyp=K1&dfSteuermann=&dfName1=test&dfName2=&dfName3=&dfName4=&dfName5=&dfName6=&dfName7=&dfName8=&dfName9=&dfName10=&dfName11=&dfName12=&dfName13=&dfName14=&dfName15=&dfName16=&dfName17=&dfName18=&dfName19=&dfName20=&dfName21=&dfName22=&dfName23=&dfName24=&cmbTrommler=&dfDatum=0001-01-01&dfStartZeit=11%3A11&dfEndeZeit=22%3A22&dfStrecke=keine&dfkm=0&cmbFahrtart=Wanderfahrt&dfBemerkung=Test
+Request URL:http://efa.kieler-kanu-klub.de/
+Request Method:POST
+Status Code:200 OK
+
+Request Headersview source
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip,deflate,sdch
+Accept-Language:de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Cache-Control:max-age=0
+Connection:keep-alive
+Content-Length:424
+Content-Type:application/x-www-form-urlencoded
+Cookie:__utma=188893489.1646114392.1358703936.1367178892.1368783485.29; __utmz=188893489.1365594840.21.3.utmcsr=efa.kieler-kanu-klub.de|utmccn=(referral)|utmcmd=referral|utmcct=/
+Host:efa.kieler-kanu-klub.de
+Origin:http://efa.kieler-kanu-klub.de
+Referer:http://efa.kieler-kanu-klub.de/
+User-Agent:Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36
+
+Form Dataview parsed
+date=1375480155&mail=&dfBoot=Test&cmbBootTyp=K1&dfSteuermann=&dfName1=test&dfName2=&dfName3=&dfName4=&dfName5=&dfName6=&dfName7=&dfName8=&dfName9=&dfName10=&dfName11=&dfName12=&dfName13=&dfName14=&dfName15=&dfName16=&dfName17=&dfName18=&dfName19=&dfName20=&dfName21=&dfName22=&dfName23=&dfName24=&cmbTrommler=&dfDatum=0001-01-01&dfStartZeit=02%3A02&dfEndeZeit=23%3A03&dfStrecke=sa&dfkm=0&cmbFahrtart=Wanderfahrt&dfBemerkung=
+
+Response Headersview source
+Connection:Keep-Alive
+Content-Encoding:gzip
+Content-Length:3614
+Content-Type:text/html
+Date:Fri, 02 Aug 2013 21:49:59 GMT
+Keep-Alive:timeout=15, max=100
+Server:Apache/2.2.14 (Ubuntu)
+Vary:Accept-Encoding
+X-Powered-By:PHP/5.3.2-1ubuntu4.20

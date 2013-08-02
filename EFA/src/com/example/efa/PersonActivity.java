@@ -35,25 +35,7 @@ public class PersonActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.person);
-        final Spinner spinner = (Spinner) findViewById(R.id.sBoatName);
-        offline offline = new offline(PersonActivity.this);
-        String[] boats = offline.getBoats();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,   android.R.layout.simple_spinner_item, boats);
-
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(BoatActivity.this, R.array.BoatTyps, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
         
-        final String[] boatName=new String[1];
-        
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                Object item = parent.getItemAtPosition(pos);
-                boatName[0]=item.toString();
-            }
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
 
 		Button btnSubmit = (Button) findViewById(R.id.btnSubmit);
 		btnSubmit.setOnClickListener(new View.OnClickListener() {
@@ -75,16 +57,20 @@ public class PersonActivity extends Activity {
 				
 
 
-					offline offline = new offline(PersonActivity.this);
-					if(offline.newPerson(firstname, lastname, boatName[0])) {
+					Offline offline = new Offline(PersonActivity.this);
+					try {
+						offline.newPerson(lastname, firstname);
 						AlertDialog.Builder alert=new AlertDialog.Builder(PersonActivity.this);
 						alert.setTitle("OKAY").setMessage("Speichern Erfolgreich").setNeutralButton("OK", null).show();
-
-					} else { 
+						etFirstName.setText(null);
+						etLastName.setText(null);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 						AlertDialog.Builder alert=new AlertDialog.Builder(PersonActivity.this);
 						alert.setTitle("Alarm!").setMessage("File ERROR").setNeutralButton("OK", null).show();
-						
 					}
+					
 				}
 				;
 

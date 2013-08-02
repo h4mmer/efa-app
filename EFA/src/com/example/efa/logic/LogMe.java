@@ -15,9 +15,17 @@ public class LogMe {
 	/**
 	 * 
 	 * @param f File welches bearbeitet werden soll.
+	
 	 */
-	public LogMe(File f) {
+	public LogMe(File f)  {
 		this.file = f;
+		if (!f.exists())
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 
 	/**
@@ -99,5 +107,8 @@ public class LogMe {
 			e.printStackTrace();
 		}
 		return list;
+	}
+	public int getnumofLines(){
+		return 0;
 	}
 }

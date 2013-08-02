@@ -1,6 +1,6 @@
 package com.example.efa;
 
-import com.example.efa.logic.offline;
+import com.example.efa.logic.Offline;
 import com.example.efa.util.SystemUiHider;
 
 import android.annotation.TargetApi;
@@ -55,21 +55,25 @@ public class RouteActivity extends Activity {
 							.setMessage("Bitte alle Felder ausfüllen!")
 							.setNeutralButton("OK", null).show();
 				} else {
-					offline offline = new offline(RouteActivity.this);
-					if (offline.newRoute(waters, start, mid, destination,
-							distance)) {
+					Offline offline = new Offline(RouteActivity.this);
+					try {
+						offline.newRoute(waters, start, mid, destination,
+								distance);
 						AlertDialog.Builder alert = new AlertDialog.Builder(
 								RouteActivity.this);
 						alert.setTitle("OKAY")
 								.setMessage("Speichern Erfolgreich")
 								.setNeutralButton("OK", null).show();
-
-					} else {
+						
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 						AlertDialog.Builder alert = new AlertDialog.Builder(
 								RouteActivity.this);
 						alert.setTitle("Alarm!").setMessage("File ERROR")
 								.setNeutralButton("OK", null).show();
 					}
+					
 				}
 
 			}

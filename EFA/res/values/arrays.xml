@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="TourTyps">
+        <item >Wanderfahrt</item>
+        <item >Vereinsfahrt</item>
+        <item >Verbandsfahrt</item>
+        <item >Training</item>
+        <item >Drachenboot-Training</item>
+        <item >Drachenboot-Rennen</item>
+    </string-array>
+    <string-array name="BoatTyps">
+        <item>Einer</item>
+        <item>Zweier</item>
+        <item>3er Kanadier</item>
+        <item>4er Kanadier</item>
+        <item>6er Kanadier</item>
+        <item>Zehner Kanadier</item>
+        <item>Drachenboot</item>
+        
+    </string-array>
+</resources>
