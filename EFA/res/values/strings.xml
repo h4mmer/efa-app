@@ -4,14 +4,8 @@
     <string name="app_name">EFA</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string-array name="BoatTyps">
-        <item>Einer</item>
-        <item>Zweier</item>
-        <item>Kanadier</item>
-        <item>Zehner Kanadier</item>
-        <item>Drachenboot</item>
-        
-    </string-array>
+    
     <string name="programmers">Kai Riedel und Lennard Hammer</string>
+    
 
 </resources>

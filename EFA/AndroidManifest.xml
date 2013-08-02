@@ -32,5 +32,6 @@
         <activity android:name="HelpActivity"></activity>
         <activity android:name="AboutActivity"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
 </manifest>
