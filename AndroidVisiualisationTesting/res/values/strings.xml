@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android visiualisation Testing</string>
+    <string name="action_settings">Settings</string>
+    <string name="press_Button_to_make_Textview_visible">Drücke den Button um den Text sichtbar zu machen</string>
+    <string name="hello_world">Hallo Welt</string>
+
+</resources>
